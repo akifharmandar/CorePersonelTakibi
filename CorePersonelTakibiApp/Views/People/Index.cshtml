@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CorePersonelTakibiApp.Models.Person>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col ">
+                <a href="/People/Create" class="btn btn-outline-success float-right mb-3">Create New One</a>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>PersonID</th>
+                            <th>Name</th>
+                            <th>LastName</th>
+                            <th>Phone</th>
+                            <th>Mail</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>Departman</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.PersonID</td>
+                            <td>@item.Name</td>
+                            <td>@item.LastName</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Mail</td>
+                            <td>@item.Gender</td>
+                            <td>@item.Address</td>
+                            <td>@item.Departman</td>
+                            <td>
+                                <a href="/People/Edit/@item.PersonID" class="btn btn-outline-warning btn-sm"> <i class="fa fa-pencil"></i></a>
+                                <a href="/People/Delete/@item.PersonID" class="btn btn-outline-danger btn-sm">  <i class="fa fa-trash"></i></a>
+                            </td>
+
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

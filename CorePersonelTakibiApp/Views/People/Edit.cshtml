@@ -1,0 +1,90 @@
+﻿@model CorePersonelTakibiApp.Models.Person
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<html>
+<head>
+    <style>
+        .container #resim {
+            position: relative;
+            top: 10px;
+            left: 540px
+        }
+
+        .container #formlar {
+            position: relative;
+            top: -245px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4 style="color:darkmagenta">Personel Takip Listesi</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <div id="resim">
+                    <img src="" width="200" height="250" alt="Resim Ekle" />
+
+                </div>
+                <div id="formlar">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Mail" class="control-label"></label>
+                            <input asp-for="Mail" class="form-control" />
+                            <span asp-validation-for="Mail" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gender" class="control-label"></label>
+                            <select asp-for="Gender" class="form-control">
+                                <option class="text-danger">Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Address" class="control-label"></label>
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Departman" class="control-label"></label>
+                            <select asp-for="Departman" class="form-control">
+                                <option class="text-danger">Select</option>
+                                <option>Muhasebe</option>
+                                <option>İK</option>
+                                <option>Planlama</option>
+                                <option>Üretim</option>
+                                <option>Lojistik</option>
+                                <option>Yazılım</option>
+                            </select>
+                        </div>
+
+                       <div class="form-group">
+                            <input type="submit" value="Update" class="btn btn-outline-danger" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
